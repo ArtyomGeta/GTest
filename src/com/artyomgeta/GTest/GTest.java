@@ -94,7 +94,8 @@ public abstract class GTest {
         return returnable;
     }
 
-    public static void makePresentableHTML(String projectName) {
+    public static String makePresentableHTML(String projectName) {
+        StringBuilder returnable = new StringBuilder();
         String testName = "", testDescription = "";
         String[] questionName = new String[GTest.returnQuestionsLength(projectName, 1)];
         String[] questionExtra = new String[GTest.returnQuestionsLength(projectName, 1)];
@@ -119,9 +120,61 @@ public abstract class GTest {
             }
 
         } catch (IOException e) {
+
             e.printStackTrace();
         }
 
+
+            returnable = new StringBuilder("<!DOCTYPE html>\n" +
+                    "<html lang=\"en\">\n" +
+                    "<head>\n" +
+                    "    <meta charset=\"UTF-8\">\n" +
+                    "    <title>Title</title>\n" +
+                    "</head>\n" +
+                    "<body style=\"background-color: #DCDCDC\">\n" +
+                    "<div style=\"margin: 50pt; background-color: white; padding: 20pt\">\n" +
+                    "    <div style=\"text-align: center; margin-bottom: 30pt\"><h1>" + testName + "</h1><p>" + testDescription + "</p></div>\n" +
+                    "    <hr>\n");
+        returnable.append("<div class=\"question\">\n");
+        for (int i = 0; i < GTest.returnQuestionsLength(projectName, 1); i++) {
+            returnable.append("<div class=\"name\"><span style=\"font-weight: normal\">" + String.format("%d) ", i + 1) + "</span> ").append(questionName[i]).append("</div>\n<div class=\"extra\">").append(questionExtra[i]).append("</div>\n").append("<div class=\"answers\">\n");
+            for (int j = 0; j < GTest.returnQuestionAnswersLength(projectName, 1, i); j++) {
+            returnable.append(String.format("%d) ", j + 1)).append(questionAnswers[i][j]).append("<br>");
+            }
+            returnable.append("</div>");
+        }
+        returnable.append("</div></div></body></html>");
+
+
+        return returnable.toString();
+    }
+
+    private String returnHTMLedQuestions(String projectName, String[] questionExtra, String[] questionName, String[][] questionAnswers) {
+        try {
+            StringBuilder sb = new StringBuilder();
+            BufferedReader br = new BufferedReader(new FileReader("Projects/" + projectName + "/data-presentable.json"));
+            String line = br.readLine();
+            while (line != null) {
+                sb.append(line);
+                line = br.readLine();
+            }
+            br.close();
+            for (int i = 0; i < GTest.returnQuestionsLength(projectName, 1); i++) {
+                questionName[i] = new JSONArray(sb.toString()).getJSONArray(1).getJSONArray(i).getJSONObject(0).getString("name");
+                questionExtra[i] = new JSONArray(sb.toString()).getJSONArray(1).getJSONArray(i).getJSONObject(0).getString("description");
+                for (int j = 0; j < GTest.returnQuestionAnswersLength(projectName, 1, i); j++) {
+                    questionAnswers[i][j] = new JSONArray(sb.toString()).getJSONArray(1).getJSONArray(i).getJSONObject(j == 0 ? 1 : j + 1).getString("text");
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String returnable = "" +
+                "" +
+                "" +
+                "";
+        return null;
     }
 
 }

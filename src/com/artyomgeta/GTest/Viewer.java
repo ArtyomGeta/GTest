@@ -42,7 +42,7 @@ public class Viewer extends JFrame {
                 line = br.readLine();
             }
             br.close();
-            this.editorPane1.setText(sb.toString());
+            this.editorPane1.setText(GTest.makePresentableHTML(projectName));
         } catch (IOException e) {
             e.printStackTrace();
         }
