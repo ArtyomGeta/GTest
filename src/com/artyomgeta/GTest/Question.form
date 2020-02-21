@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.artyomgeta.GTest.Question">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="bfc51" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="bevel-lowered"/>
+        <children>
+          <component id="7038c" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value=" Заголовок:"/>
+            </properties>
+          </component>
+          <component id="adf11" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="be236" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value=" Пояснение:"/>
+            </properties>
+          </component>
+          <component id="b8c7b" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value=" Ответы:"/>
+            </properties>
+          </component>
+          <grid id="6819b" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <toolbar id="fc19e">
+                <constraints border-constraint="North"/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="27c54" class="javax.swing.JButton" binding="btnAddAnswer">
+                    <constraints/>
+                    <properties>
+                      <text value="Добавить"/>
+                    </properties>
+                  </component>
+                  <component id="2c376" class="javax.swing.JButton" binding="btnEditAnswer">
+                    <constraints/>
+                    <properties>
+                      <text value="Изменить"/>
+                    </properties>
+                  </component>
+                  <component id="37732" class="javax.swing.JButton" binding="btnDeleteAnswer" default-binding="true">
+                    <constraints/>
+                    <properties>
+                      <text value="Удалить"/>
+                    </properties>
+                  </component>
+                </children>
+              </toolbar>
+              <scrollpane id="9bd51">
+                <constraints border-constraint="Center"/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="6b390" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
+                    <constraints/>
+                    <properties/>
+                  </component>
+                </children>
+              </scrollpane>
+            </children>
+          </grid>
+          <component id="610df" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+        </children>
+      </grid>
+      <grid id="8d336" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="South"/>
+        <properties/>
+        <border type="bevel-lowered"/>
+        <children>
+          <component id="c0c09" class="javax.swing.JButton" binding="btnSave" default-binding="true">
+            <constraints border-constraint="Center"/>
+            <properties>
+              <text value="Сохранить"/>
+            </properties>
+          </component>
+          <component id="43ed6" class="javax.swing.JButton" binding="btnCancel" default-binding="true">
+            <constraints border-constraint="West"/>
+            <properties>
+              <text value="Отмена"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

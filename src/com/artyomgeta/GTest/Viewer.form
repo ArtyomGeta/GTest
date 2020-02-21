@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.artyomgeta.GTest.Viewer">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="1508" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <toolbar id="99546">
+        <constraints border-constraint="North"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="1a739" class="javax.swing.JButton" binding="butAddQuestion">
+            <constraints/>
+            <properties>
+              <text value="Добавить вопрос"/>
+            </properties>
+          </component>
+        </children>
+      </toolbar>
+      <grid id="5aba1" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="West"/>
+        <properties>
+          <minimumSize width="270" height="170"/>
+        </properties>
+        <border type="bevel-lowered"/>
+        <children>
+          <component id="3cdbe" class="javax.swing.JList" binding="list1" default-binding="true">
+            <constraints border-constraint="Center"/>
+            <properties>
+              <maximumSize width="270" height="27"/>
+              <minimumSize width="270" height="27"/>
+              <model/>
+              <preferredSize width="270" height="27"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="474a6" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <background color="-1"/>
+        </properties>
+        <border type="bevel-lowered"/>
+        <children>
+          <scrollpane id="f8abb">
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="b0063" class="javax.swing.JEditorPane" binding="editorPane1" default-binding="true">
+                <constraints/>
+                <properties>
+                  <background color="-1"/>
+                  <contentType value="text/html"/>
+                  <editable value="false"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
